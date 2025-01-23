@@ -15,5 +15,11 @@ public final class ResponseCodes {
 
     public static final String INVALID_DATE_RANGE = "ABCIGNITEERROR04";
 
+    public static final String CLASSES_NOT_FOUND = "ABCIGNITEERROR05";
+
+    public static final String CLASSES_NOT_AVAILABLE = "ABCIGNITEERROR06";
+
+    public static final String INVALID_PARTICIPATION_DATE = "ABCIGNITEERROR07";
+
 
 }

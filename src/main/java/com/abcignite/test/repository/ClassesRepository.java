@@ -10,4 +10,5 @@ import java.util.UUID;
 @Repository
 public interface ClassesRepository extends JpaRepository<Classes,UUID> {
 
+    Optional<Classes> findByClassesId(UUID classesId);
 }

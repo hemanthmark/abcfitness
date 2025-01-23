@@ -36,7 +36,7 @@ public class DefaultExceptionHandler {
         return errorDetail;
     }
 
-    @ExceptionHandler(Exception.class)
+   @ExceptionHandler(Exception.class)
     public ProblemDetail genericExceptionHandler(Exception ex){
         ProblemDetail errorDetail = ProblemDetail.forStatus(HttpStatusCode.valueOf(500));
         errorDetail.setProperty("message",List.of("Some technical issue occurred"));

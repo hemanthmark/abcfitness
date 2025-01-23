@@ -50,7 +50,7 @@ public class CreateBookingServiceImpl implements CreateBookingService {
     public void setIdAndChangeLogTimeStamps(Booking booking){
         booking.setCreatedAt(LocalDateTime.now());
         booking.setUpdatedAt(LocalDateTime.now());
-        booking.setId(UUID.randomUUID());
+        booking.setBookingId(UUID.randomUUID());
     }
 
 

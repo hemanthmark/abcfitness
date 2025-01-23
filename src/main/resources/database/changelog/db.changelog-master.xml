@@ -38,7 +38,7 @@
 
     <changeSet id="2" author="hemanth">
         <createTable tableName="booking">
-            <column name="booking" type="UUID">
+            <column name="booking_id" type="UUID">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="classes_id" type="UUID">

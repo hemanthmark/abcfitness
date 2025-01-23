@@ -1,6 +1,7 @@
 package com.abcignite.test.validations.serviceimpl;
 
 import com.abcignite.test.exceptions.CapacityException;
+import com.abcignite.test.exceptions.DateRangeException;
 import com.abcignite.test.exceptions.ResponseCodes;
 import com.abcignite.test.request.CreateClassesRequest;
 import com.abcignite.test.validations.service.ClassesValidationService;
@@ -44,7 +45,7 @@ public class ValidateClassesCreationRequestImpl implements ClassesValidationServ
         Logger.info("Validating classes end date {}",endDate);
         if(!endDate.isAfter(LocalDate.now())){
             Logger.error("Invalid end date");
-            throw new CapacityException(messageSource.getMessage(ResponseCodes.INVALID_END_DATE,null,
+            throw new DateRangeException(messageSource.getMessage(ResponseCodes.INVALID_END_DATE,null,
                     LocaleContextHolder.getLocale()));
         }
     }
@@ -53,7 +54,7 @@ public class ValidateClassesCreationRequestImpl implements ClassesValidationServ
         Logger.info("Validating data ranges startDate {} endDate {}",startDate,endDate);
         if(endDate.isBefore(startDate)){
             Logger.error("Invalid date range");
-            throw new RuntimeException(messageSource.getMessage(ResponseCodes.INVALID_DATE_RANGE,null,
+            throw new DateRangeException(messageSource.getMessage(ResponseCodes.INVALID_DATE_RANGE,null,
                     LocaleContextHolder.getLocale()));
         }
     }

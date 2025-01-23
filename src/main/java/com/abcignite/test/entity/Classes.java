@@ -24,6 +24,7 @@ public class Classes implements Serializable {
 	private static final long serialVersionUID = -1047750184780262437L;
 
     @Id
+    @Column(name = "classes_id")
 	private UUID classesId;
 
     @Column(name = "classes_name",nullable = false)

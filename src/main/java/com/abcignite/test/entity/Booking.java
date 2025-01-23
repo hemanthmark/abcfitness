@@ -25,7 +25,8 @@ public class Booking implements Serializable {
     private static final long serialVersionUID = 6859896865129640828L;
 
     @Id
-    private UUID id;
+    @Column(name = "booking_id")
+    private UUID bookingId;
 
     @Column(name = "classes_id",nullable = false)
     private UUID classesId;
