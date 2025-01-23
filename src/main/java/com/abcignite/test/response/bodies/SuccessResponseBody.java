@@ -14,7 +14,7 @@ public class SuccessResponseBody implements Serializable {
 
     @Serial
     private static final long serialVersionUID = -2111848362052166511L;
-    
+
     private String message;
 
     private Object data;
