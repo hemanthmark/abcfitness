@@ -7,6 +7,7 @@ import com.abcignite.test.request.CreateClassesRequest;
 import com.abcignite.test.response.CreateClassesResponse;
 import com.abcignite.test.service.CreateClassesService;
 import com.abcignite.test.validations.service.ClassesValidationService;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,6 +16,9 @@ import java.util.UUID;
 
 @Service
 public class CreateClassesServiceImpl implements CreateClassesService {
+
+
+    private final org.slf4j.Logger Logger = LoggerFactory.getLogger(CreateClassesServiceImpl.class);
 
     private final ClassesValidationService validateClassesCreationRequest;
 
@@ -35,10 +39,13 @@ public class CreateClassesServiceImpl implements CreateClassesService {
     @Transactional
     @Override
     public CreateClassesResponse createClasses(CreateClassesRequest request) {
+        Logger.info("Create classes method started for request {}",request);
         validateClassesCreationRequest.validateClassesCreationRequest(request);
         Classes classes = classesMapper.mapCreateClassesRequestToClasses(request);
         updateClassesWithIdAndTimeStamps(classes);
-        return classesMapper.mapClassesToCreateClassesResponse(classesRepository.save(classes));
+        CreateClassesResponse response = classesMapper.mapClassesToCreateClassesResponse(classesRepository.save(classes));
+        Logger.info("Create classes method completed and response {}",response);
+        return response;
     }
 
     private void updateClassesWithIdAndTimeStamps(Classes classes){
