@@ -1,9 +1,6 @@
 package com.abcignite.test.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +8,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 
@@ -52,5 +50,9 @@ public class Classes implements Serializable {
 
     @Column(name = "updated_at",nullable=false)
     private LocalDateTime updatedAt;
+
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+    @JoinColumn(name = "classes_id",referencedColumnName = "classes_id")
+    private List<Booking> bookings;
 
 }
