@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -14,6 +15,9 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateClassesRequest implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = -5360656238462358219L;
 
     @Size(min = 3,message = "Name has to be at least 3 letters")
     @NotNull(message = "name cannot be null")
