@@ -3,16 +3,11 @@ package com.abcignite.test.serviceimpl;
 import com.abcignite.test.dto.ClassDetailsDTO;
 import com.abcignite.test.dto.GetBookingsDTO;
 import com.abcignite.test.entity.Booking;
-import com.abcignite.test.entity.Class;
 import com.abcignite.test.helper.BookingSpecificationHelper;
 import com.abcignite.test.helper.GetClassDetailsHelper;
 import com.abcignite.test.mapper.BookingDTOMapper;
 import com.abcignite.test.repository.BookingRepository;
-import com.abcignite.test.repository.ClassesRepository;
 import com.abcignite.test.service.SearchBookingsService;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.TypedQuery;
-import jakarta.persistence.criteria.*;
 import org.springframework.data.domain.*;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
@@ -20,11 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Service
 public class SearchBookingServiceImpl implements SearchBookingsService {
