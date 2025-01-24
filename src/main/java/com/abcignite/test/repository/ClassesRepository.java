@@ -1,14 +1,17 @@
 package com.abcignite.test.repository;
 
-import com.abcignite.test.entity.Classes;
+import com.abcignite.test.entity.Class;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public interface ClassesRepository extends JpaRepository<Classes,UUID> {
+public interface ClassesRepository extends JpaRepository<Class,UUID> {
 
-    Optional<Classes> findByClassesId(UUID classesId);
+    Optional<Class> findByClassId(UUID classId);
+
+    List<Class> findAllByClassIdIn(List<UUID> classIds);
 }

@@ -1,25 +1,26 @@
-package com.abcignite.test.response;
+package com.abcignite.test.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateBookingResponse implements Serializable {
+@Builder
+public class GetBookingsDTO implements Serializable {
 
     @Serial
-    private static final long serialVersionUID = 1618792483356583055L;
+    private static final long serialVersionUID = 6154360569114409910L;
 
-    private UUID bookingId;
+    private String className;
 
-    private UUID classId;
+    private String startTime;
 
     private String memberName;
 

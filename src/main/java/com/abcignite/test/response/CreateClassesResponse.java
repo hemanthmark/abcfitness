@@ -18,9 +18,9 @@ public class CreateClassesResponse implements Serializable {
     @Serial
     private static final long serialVersionUID = -3776784635050774601L;
 
-    private UUID classesId;
+    private UUID classId;
 
-    private String classesName;
+    private String className;
 
     private LocalDate startDate;
 

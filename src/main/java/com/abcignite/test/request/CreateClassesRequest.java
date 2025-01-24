@@ -21,7 +21,7 @@ public class CreateClassesRequest implements Serializable {
 
     @Size(min = 3,message = "Name has to be at least 3 letters")
     @NotNull(message = "name cannot be null")
-    private String classesName;
+    private String className;
 
     @NotNull(message = "start date cannot be null")
     private LocalDate startDate;

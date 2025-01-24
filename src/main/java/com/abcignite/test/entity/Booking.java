@@ -1,9 +1,6 @@
 package com.abcignite.test.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,14 +25,14 @@ public class Booking implements Serializable {
     @Column(name = "booking_id")
     private UUID bookingId;
 
-    @Column(name = "classes_id",nullable = false)
-    private UUID classesId;
+    @Column(name = "class_id",nullable = false)
+    private UUID classId;
 
     @Column(name = "member_name",nullable = false)
     private String memberName;
 
-    @Column(name = "participation_date",nullable = false)
-    private LocalDate participationDate;
+    @Column(name = "booking_date",nullable = false)
+    private LocalDate bookingDate;
 
     @Column(name = "created_at",nullable = false)
     private LocalDateTime createdAt;

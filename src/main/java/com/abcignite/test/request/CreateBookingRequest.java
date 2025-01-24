@@ -17,11 +17,11 @@ public class CreateBookingRequest implements Serializable {
     @Serial
     private static final long serialVersionUID = 8097860183804279955L;
 
-    private UUID classesId;
+    private UUID classId;
 
     private String memberName;
 
-    private LocalDate participationDate;
+    private LocalDate bookingDate;
 
 
 }

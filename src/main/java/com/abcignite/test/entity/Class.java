@@ -15,8 +15,8 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "classes")
-public class Classes implements Serializable {
+@Table(name = "class")
+public class Class implements Serializable {
 
     /**
 	 * 
@@ -24,11 +24,11 @@ public class Classes implements Serializable {
 	private static final long serialVersionUID = -1047750184780262437L;
 
     @Id
-    @Column(name = "classes_id")
-	private UUID classesId;
+    @Column(name = "class_id")
+	private UUID classId;
 
-    @Column(name = "classes_name",nullable = false)
-    private String classesName;
+    @Column(name = "class_name",nullable = false)
+    private String className;
 
     @Column(name = "start_date",nullable = false)
     private LocalDate startDate;
@@ -53,7 +53,7 @@ public class Classes implements Serializable {
     private LocalDateTime updatedAt;
 
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
-    @JoinColumn(name = "classes_id",referencedColumnName = "classes_id")
+    @JoinColumn(name = "class_id",referencedColumnName = "class_id")
     private List<Booking> bookings;
 
 }

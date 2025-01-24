@@ -1,6 +1,6 @@
 package com.abcignite.test.serviceimpl;
 
-import com.abcignite.test.entity.Classes;
+import com.abcignite.test.entity.Class;
 import com.abcignite.test.mapper.ClassesMapper;
 import com.abcignite.test.repository.ClassesRepository;
 import com.abcignite.test.request.CreateClassesRequest;
@@ -41,17 +41,17 @@ public class CreateClassesServiceImpl implements CreateClassesService {
     public CreateClassesResponse createClasses(CreateClassesRequest request) {
         Logger.info("Create classes method started for request {}",request);
         validateClassesCreationRequest.validateClassesCreationRequest(request);
-        Classes classes = classesMapper.mapCreateClassesRequestToClasses(request);
-        updateClassesWithIdAndTimeStamps(classes);
-        CreateClassesResponse response = classesMapper.mapClassesToCreateClassesResponse(classesRepository.save(classes));
+        Class aClass = classesMapper.mapCreateClassesRequestToClasses(request);
+        updateClassesWithIdAndTimeStamps(aClass);
+        CreateClassesResponse response = classesMapper.mapClassesToCreateClassesResponse(classesRepository.save(aClass));
         Logger.info("Create classes method completed and response {}",response);
         return response;
     }
 
-    private void updateClassesWithIdAndTimeStamps(Classes classes){
-        classes.setClassesId(UUID.randomUUID());
-        classes.setCreatedAt(LocalDateTime.now());
-        classes.setUpdatedAt(LocalDateTime.now());
+    private void updateClassesWithIdAndTimeStamps(Class aClass){
+        aClass.setClassId(UUID.randomUUID());
+        aClass.setCreatedAt(LocalDateTime.now());
+        aClass.setUpdatedAt(LocalDateTime.now());
     }
 
 

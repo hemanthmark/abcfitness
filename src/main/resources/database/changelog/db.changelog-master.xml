@@ -6,11 +6,11 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
     <changeSet id="1" author="hemanth">
-        <createTable tableName="classes">
-            <column name="classes_id" type="UUID">
+        <createTable tableName="class">
+            <column name="class_id" type="UUID">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="classes_name" type="VARCHAR(255)">
+            <column name="class_name" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
             <column name="start_date" type="DATE">
@@ -41,7 +41,7 @@
             <column name="booking_id" type="UUID">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="classes_id" type="UUID">
+            <column name="class_id" type="UUID">
                 <constraints nullable="false"/>
             </column>
             <column name="member_name" type="VARCHAR(255)">
